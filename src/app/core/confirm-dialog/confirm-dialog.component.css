@@ -1,0 +1,15 @@
+.container {
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100%;
+    display: flex;
+}
+
+.container .content-holder {
+    justify-content: flex-start;
+}
+
+.container .btn-holder {
+    justify-content: flex-end;
+    margin-top: auto;
+}

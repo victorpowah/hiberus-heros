@@ -1,0 +1,23 @@
+/* HeroesComponent's private CSS styles */
+table {
+  width: 100%;
+}
+
+th,
+mat-paginator {
+  background-color: #b6a4d6;
+}
+
+
+.wrapper {
+  margin: 10% 10% 0 10%;
+}
+
+.iconbutton {
+  margin-left: auto;
+  align-self: center;
+}
+
+.action-bar {
+  display: flex;
+}

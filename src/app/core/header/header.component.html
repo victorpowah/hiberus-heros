@@ -1,0 +1,18 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <a class="logo" mat-icon-button>
+      <img src="assets/angular.png">
+    </a>
+    <div class="flex">
+      <span>{{'HEADER.SELECT_LANGUAGE' | translate }}</span>
+      <div>
+        <svg class="svgImage" (click)="changeLanguage('es')" width="30" height="30">
+          <image xlink:href="./../../assets/es.svg" src="../../../assets/es.svg" width="30" height="30" />
+        </svg>
+        <svg class="svgImage" (click)="changeLanguage('en')" width="30" height="30">
+          <image xlink:href="./../../assets/gb.svg" src="../../../assets/gb.svg" width="30" height="30" />
+        </svg>
+      </div>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

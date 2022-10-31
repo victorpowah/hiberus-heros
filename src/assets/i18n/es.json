@@ -1,0 +1,24 @@
+{
+    "HEROES": {
+        "NAME_SEARCH": "Nombre del héroe",
+        "GRID": {
+            "HERO": "Héroe",
+            "ACTIONS": "Acciones"
+        },
+        "MODAL": {
+            "TITLE": "HEROE",
+            "HERO_NAME": "Nombre",
+            "BTN_CANCEL": "Cancelar",
+            "BTN_ADD": "Añadir"
+        }
+    },
+    "CONFIRM": {
+        "TITLE": "Borrar héroe",
+        "MESSAGE": "¿Está seguro de que desea eliminar el héroe?",
+        "BTN_CANCEL": "Cancelar",
+        "BTN_CONFIRM": "Confirmar"
+    },
+    "HEADER": {
+        "SELECT_LANGUAGE": "Seleccionar idioma"
+    }
+}
