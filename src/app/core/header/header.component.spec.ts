@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { environment } from '../../../environments/environment';
 import { HeaderComponent } from './header.component';
@@ -13,7 +14,8 @@ describe('HeaderComponent', () => {
     TestBed.configureTestingModule({
       imports: [
         MatIconModule,
-        MatToolbarModule
+        MatToolbarModule,
+        TranslateModule.forRoot({})
       ],
       declarations: [HeaderComponent]
     });

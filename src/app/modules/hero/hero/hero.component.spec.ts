@@ -11,10 +11,38 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import { By } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { RouterTestingModule } from '@angular/router/testing';
+import { TranslateModule } from '@ngx-translate/core';
+import { of } from 'rxjs';
+import { HeroService } from 'src/app/services/hero.service';
 import { HeroRoutingModule } from '../hero-routing.module';
 import { HeroComponent } from './hero.component';
+
+export class HeroServiceStub {
+  heroes = [
+    { id: 12, name: 'Dr. Nice' },
+    { id: 13, name: 'Bombasto' },
+    { id: 14, name: 'Celeritas' },
+    { id: 15, name: 'Magneta' },
+    { id: 16, name: 'RubberMan' },
+    { id: 17, name: 'Dynama' },
+    { id: 18, name: 'Dr. IQ' },
+    { id: 19, name: 'Magma' },
+    { id: 20, name: 'Tornado' }
+  ];
+
+  getHeroes() {
+    return of(this.heroes);
+  }
+
+  addHero() {
+    return of({});
+  }
+
+  searchHeroes() {
+    return of(this.heroes);
+  }
+}
 
 describe('HeroComponent', () => {
   let component: HeroComponent;
@@ -36,7 +64,11 @@ describe('HeroComponent', () => {
         MatDialogModule,
         MatButtonModule,
         ReactiveFormsModule,
-        TranslateModule.forRoot({})],
+        TranslateModule.forRoot({}),
+        RouterTestingModule],
+      providers: [
+        { provide: HeroService, useClass: HeroServiceStub }
+      ]
     })
       .compileComponents();
   }));
@@ -44,7 +76,6 @@ describe('HeroComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(HeroComponent);
     component = fixture.componentInstance;
-    component.hero = { id: 0, name: 'Raul' };
     fixture.detectChanges();
   });
 
@@ -52,9 +83,20 @@ describe('HeroComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should set input', () => {
+  it('should not set input', () => {
     let input = fixture.debugElement.query(By.css('input'));
     let el = input.nativeElement;
-    expect(el.value).toBe("Raul");
+    expect(el.value).toBe("");
+  });
+
+  it('should add a hero', () => {
+    const spy = spyOn(component, 'closeForm').and.callThrough();
+    let input = fixture.debugElement.query(By.css('input')).nativeElement;
+    input.value = "Raul";
+
+    let el = fixture.debugElement.query(By.css('#addButtonModal')).nativeElement;
+    el.dispatchEvent(new CustomEvent('click'));
+
+    expect(spy.calls.any()).toBeTrue();
   });
 });

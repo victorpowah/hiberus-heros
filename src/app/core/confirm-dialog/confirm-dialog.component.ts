@@ -1,4 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-confirm-dialog',
@@ -7,7 +8,8 @@ import { Component, OnInit, Inject } from '@angular/core';
 })
 export class ConfirmDialogComponent implements OnInit {
 
-  constructor() {
+  constructor(
+  ) {
   }
 
   ngOnInit() {

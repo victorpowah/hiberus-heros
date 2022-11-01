@@ -18,9 +18,9 @@ import { HeroesRoutingModule } from '../heroes-routing.module';
 import { HeroesComponent } from './heroes.component';
 
 import * as $ from 'jquery';
-import test from 'node:test';
-import { HeroComponent } from '../hero/hero.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { RouterTestingModule } from "@angular/router/testing";
+import { ConfirmDialogComponent } from 'src/app/core/confirm-dialog/confirm-dialog.component';
 
 export class HeroServiceStub {
   heroes = [
@@ -54,7 +54,7 @@ describe('HeroesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [HeroesComponent, HeroComponent],
+      declarations: [HeroesComponent, ConfirmDialogComponent],
       imports: [
         HttpClientModule,
         BrowserAnimationsModule,
@@ -68,7 +68,8 @@ describe('HeroesComponent', () => {
         MatDialogModule,
         MatButtonModule,
         ReactiveFormsModule,
-        TranslateModule.forRoot({})],
+        TranslateModule.forRoot({}),
+        RouterTestingModule],
       providers: [
         { provide: HeroService, useClass: HeroServiceStub }
       ]
@@ -91,13 +92,13 @@ describe('HeroesComponent', () => {
 
     let matFormField = fixture.debugElement.query(By.css('mat-form-field'));
     let el = matFormField.nativeElement;
-    el.dispatchEvent(new CustomEvent('change'));
+    el.dispatchEvent(new CustomEvent('keyup'));
 
     expect(spy.calls.any()).toBeTrue();
   });
 
   it('should open modal', () => {
-    const spy = spyOn(component, 'openHeroModal').and.callThrough();
+    const spy = spyOn(component, 'openHeroForm').and.callThrough();
 
     let addButton = fixture.debugElement.query(By.css('button'));
     let el = addButton.nativeElement;
