@@ -55,5 +55,3 @@ _Herramientas utilizadas_
 ## Autores ✒️
 
 * **Víctor Rodríguez García** - [victorpowah](https://github.com/victorpowah)
-
-También puedes mirar la lista de todos los [contribuyentes](https://github.com/your/project/contributors) quíenes han participado en este proyecto. 
