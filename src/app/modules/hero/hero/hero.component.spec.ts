@@ -11,9 +11,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import { By } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HeroesRoutingModule } from '../heroes-routing.module';
 import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HeroRoutingModule } from '../hero-routing.module';
 import { HeroComponent } from './hero.component';
 
 describe('HeroComponent', () => {
@@ -27,7 +27,7 @@ describe('HeroComponent', () => {
         HttpClientModule,
         BrowserAnimationsModule,
         CommonModule,
-        HeroesRoutingModule,
+        HeroRoutingModule,
         MatTableModule,
         MatPaginatorModule,
         MatIconModule,

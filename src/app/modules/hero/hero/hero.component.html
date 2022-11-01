@@ -12,16 +12,14 @@
             </form>
         </div>
         <div class="btn-holder" mat-dialog-actions>
-            <span>
-                <button id="closeButtonModal" type="button" mat-stroked-button color="primary"
-                    [mat-dialog-close]="undefined">
-                    {{'HEROES.MODAL.BTN_CANCEL' | translate}}
-                </button>
-                <button id="addButtonModal" type="button" mat-flat-button color="primary" [disabled]="!heroForm.valid"
-                    [mat-dialog-close]="closeModal()">
-                    {{'HEROES.MODAL.BTN_ADD' | translate}}
-                </button>
-            </span>
+            <button id="addButtonModal" class="button-action" type="button" mat-stroked-button color="primary"
+                [disabled]="!heroForm.valid" (click)="return()">
+                {{'HEROES.MODAL.BTN_CANCEL' | translate}}
+            </button>
+            <button id="addButtonModal" class="button-action" type="button" mat-flat-button color="primary"
+                [disabled]="!heroForm.valid" (click)="closeForm()">
+                {{'HEROES.MODAL.BTN_ADD' | translate}}
+            </button>
         </div>
     </div>
 </ng-container>

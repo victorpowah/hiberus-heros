@@ -6,7 +6,7 @@
           <mat-label>{{'HEROES.NAME_SEARCH' | translate}}</mat-label>
           <input matInput type="search">
         </mat-form-field>
-        <button mat-flat-button mat-icon-button (click)="openHeroModal(0)" class="iconbutton" color="primary">
+        <button mat-flat-button mat-icon-button (click)="openHeroForm(0)" class="iconbutton" color="primary">
           <mat-icon aria-label="Añadir">add</mat-icon>
         </button>
       </div>
@@ -33,7 +33,7 @@
           <th mat-header-cell *matHeaderCellDef> {{'HEROES.GRID.ACTIONS' | translate}} </th>
           <td mat-cell *matCellDef="let element">
             <button [id]="'buttonEdit' + element.id" mat-icon-button matTooltip="Click to Edit"
-              (click)="openHeroModal(1,element)" class="iconbutton">
+              (click)="openHeroForm(element.id)" class="iconbutton">
               <mat-icon aria-label="Editar">edit</mat-icon>
             </button>
             <button [id]="'buttonDelete' + element.id" mat-icon-button matTooltip="Click to Delete"

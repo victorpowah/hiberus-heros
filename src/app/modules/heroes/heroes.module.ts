@@ -10,7 +10,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
-import { HeroComponent } from './hero/hero.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UppercaseDirective } from 'src/app/directives/toUpperCase.directive';
 import { ConfirmDialogComponent } from 'src/app/core/confirm-dialog/confirm-dialog.component';
@@ -20,7 +19,7 @@ import { HttpClient } from '@angular/common/http';
 
 
 @NgModule({
-  declarations: [HeroesComponent, HeroComponent, UppercaseDirective, ConfirmDialogComponent],
+  declarations: [HeroesComponent, UppercaseDirective, ConfirmDialogComponent],
   imports: [
     CommonModule,
     HeroesRoutingModule,

@@ -1,8 +1,8 @@
 .container {
     justify-content: space-between;
     flex-direction: column;
-    height: 100%;
     display: flex;
+    margin: 2rem;
 }
 
 .container .content-holder {
@@ -12,4 +12,8 @@
 .container .btn-holder {
     justify-content: flex-end;
     margin-top: auto;
+}
+
+.button-action {
+    margin-right: 0.5rem;
 }
