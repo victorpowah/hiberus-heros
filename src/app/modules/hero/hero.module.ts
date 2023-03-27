@@ -10,10 +10,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpLoaderFactory } from 'src/app/app.module';
+import { UppercaseDirective } from 'src/app/directives/toUpperCase.directive';
 
 
 @NgModule({
-  declarations: [HeroComponent],
+  declarations: [HeroComponent, UppercaseDirective],
   imports: [
     CommonModule,
     HeroRoutingModule,
