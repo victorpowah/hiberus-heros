@@ -19,7 +19,7 @@ import { HttpClient } from '@angular/common/http';
 
 
 @NgModule({
-  declarations: [HeroesComponent, UppercaseDirective, ConfirmDialogComponent],
+  declarations: [HeroesComponent, ConfirmDialogComponent],
   imports: [
     CommonModule,
     HeroesRoutingModule,
